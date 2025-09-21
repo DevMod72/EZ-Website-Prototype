@@ -19,9 +19,6 @@
       color: #b5b9bb;
       text-decoration: none;
     }
-    a:hover {
-      text-decoration: underline;
-    }
 
     #service-background
     {
@@ -48,7 +45,9 @@
       position: fixed;
       width: 100%;
       top: 0;
+      z-index: 2;
     }
+
     header h1 {
       margin: 0;
       font-size: 2.5rem;
@@ -66,6 +65,7 @@
       position: fixed;
       width: 100%;
       top: 150px;
+      z-index: 2;
     }
     nav ul {
       display: flex;
@@ -87,6 +87,7 @@
     }
     nav a:hover {
       background-color: #145a86;
+      color: lightgrey;
     }
 
     /* Hero */
@@ -236,9 +237,6 @@
       color: #2980b9;
       text-decoration: none;
     }
-    a:hover {
-      text-decoration: underline;
-    }
     img {
       max-width: 100%;
       height: auto;
@@ -293,22 +291,19 @@
       border-radius: 4px;
       transition: background-color 0.3s ease;
     }
-    nav a:hover {
-      background-color: #145a86;
-    }
 
     /* Hero */
     .hero {
-      background: url('https://images.unsplash.com/photo-1590080877777-cedd9e07a79c?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+      background: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Ff%2Ffc%2FFlag_of_Mexico.svg%2F1200px-Flag_of_Mexico.svg.png&f=1&nofb=1&ipt=9e3f28472500e03c86d3aebd6fc90680fa4f55e8ce72f716e81aa2454e92e706$0") center/cover no-repeat;
       color: white;
       padding: 5rem 2rem;
       text-align: center;
-      filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 1));
     }
     .hero h2 {
       font-size: 2.8rem;
       text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
       margin-bottom: 1rem;
+      filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 1));
     }
     .hero p {
       font-size: 1.3rem;
