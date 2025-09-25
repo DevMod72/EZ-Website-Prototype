@@ -212,6 +212,7 @@ th {
 }
 
 .faq-answer {
+  font-size: 1rem;
   padding-left: 1rem;
   padding-bottom: 0rem;
   max-height: 0;
@@ -276,7 +277,6 @@ footer {
 
 @media (max-width: 768px) {
   nav ul {
-    flex-wrap: wrap;
     justify-content: center;
     gap: 0.5rem;
   }
@@ -320,19 +320,20 @@ footer {
     top: 0.7rem;
   }
   .faq-answer {
-    padding-left: 1rem;
-    padding-bottom: 0rem;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 250ms ease;
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 480px) {
+  nav {
+    display: block;
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
   nav ul {
-    flex-wrap: wrap;
     justify-content: center;
     gap: 0.15rem;
+    padding-left: 3rem;
   }
   nav a {
     padding: 0.2rem 0.4rem;
@@ -366,5 +367,57 @@ footer {
   .faq-question .plus {
     font-size: 1.1rem;
     top: 0.8rem;
+  }
+  .faq-answer {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 375px) {
+  nav {
+    display: block;
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
+  nav ul {
+    justify-content: center;
+    gap: 0.1rem;
+    padding-left: 5rem;
+  }
+  nav a {
+    padding: 0.1rem 0.3rem;
+    font-size: 0.7rem;
+  }
+  nav a:hover {
+    font-size: 0.75rem;
+  }
+  section {
+    padding: 1rem;
+  }
+  header h1 {
+    font-size: 1.6rem;
+  }
+  header p {
+    font-size: 0.8rem;
+  }
+  .hero {
+    padding-top: 15rem;
+    padding-bottom: 5rem;
+  }
+  .hero h2 {
+    font-size: 1.4rem;
+  }
+  .hero p {
+    font-size: 0.8rem;
+  }
+  .faq-question {
+    font-size: 0.6rem;
+  }
+  .faq-question .plus {
+    font-size: 0.9rem;
+    top: 0.8rem;
+  }
+  .faq-answer {
+    font-size: 0.7rem;
   }
 }
