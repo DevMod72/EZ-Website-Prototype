@@ -28,6 +28,7 @@ body {
   color: var(--blackgreen);
   margin: 0;
   line-height: 1.6;
+  font-size: 1rem;
 }
 a {
   color: #b5b9bb;
@@ -244,7 +245,7 @@ select {
 input:focus,
 textarea:focus,
 select:focus {
-  border-color: #2980b9;
+  border-color: var(--darkgreen);
   outline: none;
 }
 button.quote-submit {
@@ -276,9 +277,12 @@ footer {
 }
 
 @media (max-width: 768px) {
+  footer {
+    font-size: 0.8rem;
+  }
   nav ul {
     justify-content: center;
-    gap: 0.5rem;
+    gap: 1rem;
   }
   nav a {
     padding: 0.25rem 0.5rem;
@@ -325,22 +329,28 @@ footer {
 }
 
 @media (max-width: 480px) {
-  nav {
-    display: block;
-    overflow-x: scroll;
-    white-space: nowrap;
-  }
-  nav ul {
-    justify-content: center;
-    gap: 0.15rem;
-    padding-left: 3rem;
-  }
-  nav a {
-    padding: 0.2rem 0.4rem;
+  footer {
     font-size: 0.7rem;
   }
+  nav {
+    overflow-x: auto;
+  }
+  nav ul {
+    display: inline-flex;
+    scroll-snap-type: x mandatory;
+    flex-wrap: nowrap;
+    padding: 0.5rem 8rem;
+  }
+  nav li {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+  nav a {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.8rem;
+  }
   nav a:hover {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
   }
   section {
     padding: 1.2rem;
@@ -374,18 +384,14 @@ footer {
 }
 
 @media (max-width: 375px) {
-  nav {
-    display: block;
-    overflow-x: scroll;
-    white-space: nowrap;
+  footer {
+    font-size: 0.6rem;
   }
   nav ul {
-    justify-content: center;
-    gap: 0.1rem;
-    padding-left: 5rem;
+    padding: 0.5rem 7rem;
   }
   nav a {
-    padding: 0.1rem 0.3rem;
+    padding: 0.2rem 0.4rem;
     font-size: 0.7rem;
   }
   nav a:hover {
