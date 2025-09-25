@@ -3,6 +3,18 @@ html {
   scroll-padding-top: 12rem;
 }
 
+:root {
+  --whitepastelgreen: rgb(228, 247, 228);
+  --lightpastelgreen: rgb(201, 241, 201);
+  --pastelgreen: rgb(172, 223, 172);
+  --darkpastelgreen: rgb(141, 202, 141);
+  --blackpastelgreen: rgb(85, 168, 85);
+  --lightgreen: rgb(22, 129, 22);
+  --green: rgb(8, 94, 8);
+  --darkgreen: rgb(4, 80, 4);
+  --blackgreen: rgb(1, 49, 1);
+}
+
 /* Base Reset & Typography */
 *,
 *::before,
@@ -12,9 +24,8 @@ html {
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f8fb;
-  color: #2c3e50;
-  padding-top: 100px;
+  background-color: #dbdbdb;
+  color: var(--blackgreen);
   margin: 0;
   line-height: 1.6;
 }
@@ -23,26 +34,12 @@ a {
   text-decoration: none;
 }
 
-/* Container */
-.container {
-  width: 90%;
-  max-width: 100rem;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
 /* Header */
 header {
-  background-color: #2980b9;
+  background-color: var(--green);
   color: white;
   padding: 1.5rem 0;
   text-align: center;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 2;
 }
 
 header h1 {
@@ -58,56 +55,63 @@ header p {
 
 /* Navigation */
 nav {
-  background-color: #1f618d;
-  position: fixed;
-  width: 100%;
+  background-color: var(--darkgreen);
   height: 3rem;
-  top: 10rem;
-  z-index: 2;
 }
 nav ul {
   display: flex;
   justify-content: center;
   list-style: none;
-  padding: 0.5rem 0;
+  padding: 0.6em 0;
   margin: 0;
-  flex-wrap: wrap;
+  gap: 3rem;
 }
 nav li {
-  margin: 0 2rem;
+  margin: 0;
 }
 nav a {
   color: #fff;
   font-size: 1rem;
   font-weight: 600;
-  padding: 0.4rem 0.8rem;
+  padding: 0.3rem 0.6rem;
   border-radius: 2rem;
   transition: background-color 0.3s ease, font-size 0.2s ease;
 }
 nav a:hover {
-  background-color: #145a86;
+  background-color: var(--lightgreen);
   font-size: 1.05rem;
   color: lightgrey;
 }
 
+.nav-bar {
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+}
+
 /* Hero */
 .hero {
-  background: url("https://img.freepik.com/premium-vector/caution-warning-icon-flat-style-stop-vector-illustration-isolated-background-enter-sign-business-concept_157943-45113.jpg");
+  background: url(JPEG/cover.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: darken;
   color: white;
-  padding: 20rem 2rem;
+  margin-bottom: 2rem;
+  padding-top: 20rem;
+  padding-bottom: 15rem;
   text-align: center;
   align-items: center;
   justify-content: center;
 }
 .hero h2,
 p {
-  filter: drop-shadow(0 1rem 1.25rem rgba(0, 0, 0, 1));
+  filter: drop-shadow(0 0.5rem 0.75rem rgba(0, 0, 0, 1));
 }
 .hero h2 {
-  color: #2980b9;
+  color: var(--blackpastelgreen);
   font-size: 4rem;
   margin-bottom: 1rem;
 }
@@ -120,14 +124,23 @@ p {
 /* Sections */
 section {
   background: white;
-  margin: 2rem 0;
   padding: 5rem;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
+/* Container */
+.container {
+  display: block;
+  width: 90%;
+  max-width: 100rem;
+  margin: 2rem auto;
+  padding: 2rem;
+  padding-bottom: 4rem;
+}
+
 .container h2 {
-  color: #2980b9;
-  border-bottom: 0.25rem solid #2980b9;
+  color: var(--green);
+  border-bottom: 0.25rem solid var(--green);
   padding-bottom: 0.5rem;
   margin-bottom: 1.2rem;
 }
@@ -147,12 +160,12 @@ table {
 th,
 td {
   padding: 1rem;
-  border: 1px solid #ddd;
+  border: 0.125rem solid var(--green);
   text-align: left;
 }
 th {
-  background-color: #2980b9;
-  color: white;
+  background-color: var(--pastelgreen);
+  color: black;
 }
 
 /* FAQ Styles */
@@ -162,8 +175,8 @@ th {
 }
 
 .faq-item {
-  background-color: #ecf6fb;
-  border-left: 0.5rem solid #2980b9;
+  background-color: var(--whitepastelgreen);
+  border-left: 0.5rem solid var(--lightgreen);
   border-radius: 0.5rem;
   margin-bottom: 2rem;
   overflow: hidden;
@@ -171,7 +184,8 @@ th {
 
 .faq-question {
   text-align: left;
-  background-color: #ecf6fb;
+  color: #2c3e50;
+  background-color: var(--lightpastelgreen);
   width: 100%;
   padding: 1rem;
   font-size: 1rem;
@@ -181,12 +195,8 @@ th {
   transition: background-color 0.3s ease;
 }
 
-.faq-question strong {
-  color: #2c3e50;
-}
-
 .faq-question:hover {
-  background-color: #ddd;
+  background-color: var(--darkpastelgreen);
 }
 
 .faq-question .plus {
@@ -237,7 +247,7 @@ select:focus {
   outline: none;
 }
 button.quote-submit {
-  background-color: #2980b9;
+  background-color: var(--lightgreen);
   color: white;
   font-weight: bold;
   padding: 0.8rem 1.6rem;
@@ -251,29 +261,110 @@ button.quote-submit {
   margin: 1.5rem auto 0;
 }
 button.quote-submit:hover {
-  background-color: #1f4f72;
+  background-color: var(--darkgreen);
   transform: translateY(-2px);
 }
 
 /* Footer */
 footer {
-  background-color: #1f618d;
+  background-color: var(--green);
   color: white;
   text-align: center;
   padding: 1rem 0;
   font-size: 0.9rem;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   nav ul {
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
   }
-  nav li {
-    margin: 0.5rem 0;
+  nav a {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.9rem;
+  }
+  nav a:hover {
+    font-size: 0.95rem;
+  }
+  section {
+    padding: 2rem;
+  }
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    margin: 1rem;
+  }
+  header h1 {
+    font-size: 2rem;
+  }
+  header p {
+    font-size: 1.2rem;
+  }
+  .hero {
+    padding-top: 15rem;
+    padding-bottom: 5rem;
   }
   .hero h2 {
-    font-size: 2.2rem;
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .faq-question {
+    font-size: 0.9rem;
+  }
+  .faq-question .plus {
+    font-size: 1.3rem;
+    top: 0.7rem;
+  }
+  .faq-answer {
+    padding-left: 1rem;
+    padding-bottom: 0rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 250ms ease;
+  }
+}
+
+@media (max-width: 480px) {
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.15rem;
+  }
+  nav a {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.7rem;
+  }
+  nav a:hover {
+    font-size: 0.75rem;
+  }
+  section {
+    padding: 1.2rem;
+  }
+  header h1 {
+    font-size: 1.8rem;
+  }
+  header p {
+    font-size: 1rem;
+  }
+  .hero {
+    padding-top: 15rem;
+    padding-bottom: 5rem;
+  }
+  .hero h2 {
+    font-size: 1.6rem;
+  }
+  .hero p {
+    font-size: 0.9rem;
+  }
+  .faq-question {
+    font-size: 0.8rem;
+  }
+  .faq-question .plus {
+    font-size: 1.1rem;
+    top: 0.8rem;
   }
 }
