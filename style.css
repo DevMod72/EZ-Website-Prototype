@@ -30,6 +30,7 @@ body {
   line-height: 1.6;
   font-size: 1rem;
 }
+
 a {
   color: #b5b9bb;
   text-decoration: none;
@@ -39,7 +40,7 @@ a {
 header {
   background-color: var(--green);
   color: white;
-  padding: 1.5rem 0;
+  padding: 0.75rem 0;
   text-align: center;
 }
 
@@ -93,22 +94,21 @@ nav a:hover {
 
 /* Hero */
 .hero {
-  background: url(JPEG/cover.jpg);
+  background: url(JPEG/cover6.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: bottom 90% left 25%;
   background-color: rgba(0, 0, 0, 0.5);
   background-blend-mode: darken;
   color: white;
   margin-bottom: 2rem;
   padding-top: 20rem;
-  padding-bottom: 15rem;
+  padding-bottom: 20rem;
   text-align: center;
   align-items: center;
   justify-content: center;
 }
-.hero h2,
-p {
+.hero h2 {
   filter: drop-shadow(0 0.5rem 0.75rem rgba(0, 0, 0, 1));
 }
 .hero h2 {
@@ -120,6 +120,7 @@ p {
   font-size: 1.3rem;
   max-width: 50rem;
   margin: 0 auto;
+  filter: drop-shadow(0 0.5rem 0.75rem rgba(0, 0, 0, 1));
 }
 
 /* Sections */
@@ -165,8 +166,14 @@ td {
   text-align: left;
 }
 th {
-  background-color: var(--pastelgreen);
+  background-color: var(--lightpastelgreen);
   color: black;
+}
+
+#table-header {
+  text-align: center;
+  font-size: 1.25rem;
+  background-color: var(--darkpastelgreen);
 }
 
 /* FAQ Styles */
@@ -247,6 +254,12 @@ textarea:focus,
 select:focus {
   border-color: var(--darkgreen);
   outline: none;
+}
+#phone:invalid {
+  color: red;
+}
+#email:invalid:not(:placeholder-shown) {
+  color: red;
 }
 button.quote-submit {
   background-color: var(--lightgreen);
@@ -364,6 +377,7 @@ footer {
   .hero {
     padding-top: 15rem;
     padding-bottom: 5rem;
+    background-position: bottom 70% left 25%;
   }
   .hero h2 {
     font-size: 1.6rem;
@@ -409,6 +423,7 @@ footer {
   .hero {
     padding-top: 15rem;
     padding-bottom: 5rem;
+    background-position: bottom 50% left 25%;
   }
   .hero h2 {
     font-size: 1.4rem;

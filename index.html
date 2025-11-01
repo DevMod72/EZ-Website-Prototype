@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ez Dump Disposal Services</title>
+    <title>EZ Dump Disposal Services</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -58,38 +58,40 @@
       <table>
         <thead>
           <tr>
+            <th id="table-header" colspan="2">
+              1 Ton Capacity for all Dumpster Rentals
+            </th>
+          </tr>
+        </thead>
+        <thead>
+          <tr>
             <th>Size</th>
             <th>Typical Projects</th>
-            <th>Capacity</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>10 Yard</td>
-            <td>Small cleanouts, yard waste</td>
-            <td>≈ 4 truck loads</td>
+            <td>15 Yard</td>
+            <td>Small cleanouts, construction debris, etc.</td>
           </tr>
           <tr>
             <td>20 Yard</td>
             <td>Home renovations, medium projects</td>
-            <td>≈ 8 truck loads</td>
           </tr>
           <tr>
             <td>30 Yard</td>
             <td>Major demolitions, industrial cleanup</td>
-            <td>≈ 12 truck loads</td>
           </tr>
           <tr>
             <td>40 Yard</td>
             <td>Large commercial/industrial projects</td>
-            <td>≈ 16 truck loads</td>
           </tr>
         </tbody>
       </table>
     </section>
 
     <section id="why-choose" class="container">
-      <h2 class="navigation-h2">Why Choose Ez Dump Disposal Services?</h2>
+      <h2 class="navigation-h2">Why Choose EZ Dump Disposal Services?</h2>
       <ul>
         <li>Reliable, on-time service tailored to your needs</li>
         <li>Eco-conscious disposal with full recycling and LEED support</li>
@@ -101,8 +103,8 @@
     <section id="recycling" class="container">
       <h2 class="navigation-h2">Is Your Load Recyclable?</h2>
       <p>
-        We support sustainability. Let us know if your load is recyclable or if
-        you need LEED reporting—we’ll make it easy to go green.
+        We support sustainability. Let us know if your load is recyclable and
+        we’ll make it easy to go green.
       </p>
     </section>
 
@@ -134,8 +136,8 @@
           </button>
           <div class="faq-answer">
             <p>
-              Yes! We partner with local recycling centers and provide LEED
-              tracking.
+              Yes! Recyclable items in your dumpster are sorted and properly
+              handled.
             </p>
           </div>
         </div>
@@ -159,10 +161,7 @@
             <span class="plus"><strong>&#43;</strong></span>
           </button>
           <div class="faq-answer">
-            <p>
-              We can recommend local labor services and assist with light
-              pickup.
-            </p>
+            <p>Yes, we can help load your dumpster for an extra cost.</p>
           </div>
         </div>
 
@@ -189,20 +188,37 @@
           </div>
         </div>
       </div>
-      <script src="script.js"></script>
     </section>
 
     <section id="quote" class="container">
-      <h2 class="navigation-h2">Request a Free Instant Quote</h2>
-      <form aria-label="Dumpster rental quote form">
+      <h2 class="navigation-h2">Request a Free Quote</h2>
+      <form
+        aria-label="Dumpster rental quote form"
+        action="https://api.web3forms.com/submit"
+        method="POST"
+        id="quote-form"
+      >
+        <!-- ?Web3Forms Email Data -->
+        <input
+          type="hidden"
+          name="access_key"
+          value="6898fcc2-fd81-4cf6-bef1-1c3722a0a3fc"
+        />
+        <input type="hidden" name="from_name" value="EZDump Quote Request" />
+        <input
+          type="hidden"
+          name="subject"
+          value="Someone just requested a quote for a dumpster"
+        />
+
         <label for="name">Name<span aria-hidden="true">*</span>:</label>
         <input
           type="text"
           id="name"
           name="name"
-          required
           aria-required="true"
           placeholder="Your full name"
+          required
         />
 
         <label for="email">Email<span aria-hidden="true">*</span>:</label>
@@ -210,9 +226,9 @@
           type="email"
           id="email"
           name="email"
-          required
           aria-required="true"
           placeholder="you@example.com"
+          required
         />
 
         <label for="phone">Phone (optional):</label>
@@ -221,34 +237,40 @@
           id="phone"
           name="phone"
           placeholder="(555) 555-5555"
+          pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
+          maxlength="10"
+          onkeypress="return event.charCode>=48 && event.charCode<=57"
         />
 
-        <label for="size">Dumpster Size:</label>
-        <select id="size" name="size">
-          <option value="" disabled selected>Select size</option>
-          <option value="10-yard">10 Yard</option>
+        <label for="size">Dumpster Size*:</label>
+        <select type="text" id="size" name="size" required>
+          <option value="" selected disabled>Select size</option>
+          <option value="10-yard">15 Yard</option>
           <option value="20-yard">20 Yard</option>
-          <option value="30-yard">30 Yard</option>
-          <option value="40-yard">40 Yard</option>
+          <option value="30-yard" disabled>
+            <em>30 Yard (Unavailble)</em>
+          </option>
+          <option value="40-yard" disabled>40 Yard (Unavailble)</option>
         </select>
 
         <label for="details">Project Details:</label>
         <textarea
           id="details"
-          name="details"
+          name="message"
           rows="4"
           placeholder="Tell us about your project..."
         ></textarea>
+
+        <div class="h-captcha" data-captcha="true"></div>
 
         <button class="quote-submit" type="submit">Get My Quote</button>
       </form>
     </section>
 
     <footer role="contentinfo">
-      <p>
-        &copy; 2025 Ez Dump Disposal Services. Proudly serving Arizona and
-        beyond.
-      </p>
+      <p>&copy; 2025 EZ Dump Disposal Services. Proudly serving Arizona.</p>
     </footer>
+    <script src="script.js"></script>
+    <script src="https://web3forms.com/client/script.js" async defer></script>
   </body>
 </html>
