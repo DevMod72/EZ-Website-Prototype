@@ -51,7 +51,7 @@ form.addEventListener("submit", function (e) {
   const name = formData.get("name");
 
   // Create a custom subject
-  const subject = `${name} sent a message from website`;
+  const subject = `${name} requested a quote for EZ Dump Disposal Services`;
 
   // Append the custom subject to the form data
   formData.append("subject", subject);
