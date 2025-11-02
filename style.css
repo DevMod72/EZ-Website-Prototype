@@ -256,10 +256,12 @@ select:focus {
   outline: none;
 }
 #phone:invalid {
-  color: red;
+  border-color: red;
+  border-width: 0.15rem;
 }
 #email:invalid:not(:placeholder-shown) {
-  color: red;
+  border-color: red;
+  border-width: 0.15rem;
 }
 button.quote-submit {
   background-color: var(--lightgreen);
